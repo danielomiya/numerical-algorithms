@@ -2,41 +2,44 @@ from typing import List, Optional
 
 
 def calc_error(avg_point: float, number: int) -> float:
-    """[summary]
+    """Calculates the error rate
 
     Args:
-        avg_point (float): [description]
-        number (int): [description]
+        avg_point (float): avg point of current approximation
+        number (int): target number (s)
 
     Returns:
-        float: [description]
+        float: error rate
     """
     return avg_point**2 - number
 
 
 def avg(*args: List[float]) -> float:
-    """[summary]
+    """Calculates the average
 
     Returns:
-        float: [description]
+        float: average
     """
     return sum(args)/len(args)
 
 
-def babylonian_sqrt(number: float, lower_lim: Optional[float] = None, upper_lim: Optional[float] = None, rounds: Optional[int] = 10) -> float:
-    """[summary]
+def babylonian_sqrt(number: float,
+                    lower_lim: Optional[float] = None,
+                    upper_lim: Optional[float] = None,
+                    rounds: Optional[int] = 10) -> float:
+    """Calculates a square root using babylonian algorithm
 
     Args:
-        number (float): [description]
-        lower_lim (Optional[float], optional): [description]. Defaults to None.
-        upper_lim (Optional[float], optional): [description]. Defaults to None.
-        rounds (Optional[int], optional): [description]. Defaults to 10.
+        number (float): number whose square root we're calculating
+        lower_lim (float, optional): approx lower limit. Defaults to None.
+        upper_lim (float, optional): approx upper limit. Defaults to None.
+        rounds (int, optional): max num of iterations. Defaults to 10.
 
     Raises:
-        ArithmeticError: [description]
+        ArithmeticError: when number is negative
 
     Returns:
-        float: [description]
+        float: square root
     """
     if number == 0:
         # square root of 0 is 0
