@@ -9,7 +9,7 @@ def calc_error(avg_point: float, number: int) -> float:
         number (int): target number (s)
 
     Returns:
-        float: error rate
+        float: absolute error
     """
     return avg_point**2 - number
 
