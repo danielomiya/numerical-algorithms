@@ -2,11 +2,11 @@ from typing import List, Optional
 
 
 def calc_error(avg_point: float, number: int) -> float:
-    """Calculates the error rate
+    """Calculates the error rate.
 
     Args:
-        avg_point (float): avg point of current approximation
-        number (int): target number (s)
+        avg_point (float): avg point of current approximation.
+        number (int): target number (s).
 
     Returns:
         float: absolute error
@@ -15,7 +15,7 @@ def calc_error(avg_point: float, number: int) -> float:
 
 
 def avg(*args: List[float]) -> float:
-    """Calculates the average
+    """Calculates the average.
 
     Returns:
         float: average
@@ -27,19 +27,19 @@ def babylonian_sqrt(number: float,
                     lower_lim: Optional[float] = None,
                     upper_lim: Optional[float] = None,
                     rounds: Optional[int] = 10) -> float:
-    """Calculates a square root using babylonian algorithm
+    """Calculates a square root using babylonian algorithm.
 
     Args:
-        number (float): number whose square root we're calculating
+        number (float): number whose square root we're calculating.
         lower_lim (float, optional): approx lower limit. Defaults to None.
         upper_lim (float, optional): approx upper limit. Defaults to None.
         rounds (int, optional): max num of iterations. Defaults to 10.
 
     Raises:
-        ArithmeticError: when number is negative
+        ArithmeticError: when number is negative.
 
     Returns:
-        float: square root
+        float: square root.
     """
     if number == 0:
         # square root of 0 is 0
