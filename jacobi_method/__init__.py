@@ -9,7 +9,7 @@ def jacobi_method(matrix: List[List[float]],
 
     Args:
         matrix (List[List[float]]): system of equations
-        max_iter (int, optional): maximum number of iterations. Defaults to 1000.
+        max_iter (int, optional): maximum number of iterations. Defaults to 100.
         tolerance (float, optional): acceptable tolerance for the approx. Defaults to 1e-10.
         roots (List[float], optional): approx of the roots. Defaults to None.
 
