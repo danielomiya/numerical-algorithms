@@ -1,6 +1,7 @@
 import pytest
 from gaussian_elimination import gaussian_elimination
 
+
 @pytest.mark.parametrize('matrix,expected', [
     ([  # example
         [1,  1,  0,   3,   4],
@@ -14,9 +15,9 @@ from gaussian_elimination import gaussian_elimination
         [1,  1, 0,  3],
     ], [1.1875, 1.8125, 0.875]),
     ([  # 3.b
-        [ 2, -1.5, 3, 1],
-        [-1,    0, 2, 3],
-        [ 4, -4.5, 5, 1],
+        [2, -1.5, 3, 1],
+        [-1,   0, 2, 3],
+        [4, -4.5, 5, 1],
     ], [-1, 0, 1]),
     ([  # 3.c
         [2,   0,   0, 0,    3],
@@ -42,4 +43,4 @@ def test_error():
     with pytest.raises(ArithmeticError) as exc_info:
         gaussian_elimination(matrix)
 
-    assert 'no unique solution exists' == str(exc_info.value)
+    assert str(exc_info.value) == 'no unique solution exists'
