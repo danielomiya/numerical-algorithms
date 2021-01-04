@@ -1,5 +1,5 @@
 import pytest
-from gaussian_elimination import gaussian_elimination
+from numerical_algorithms import gaussian_elimination
 
 
 @pytest.mark.parametrize('matrix,expected', [

@@ -1,5 +1,5 @@
 import pytest
-from babylonian_sqrt import babylonian_sqrt
+from numerical_algorithms import babylonian_sqrt
 
 def test_main():
     sqrt = babylonian_sqrt(2, rounds=25)

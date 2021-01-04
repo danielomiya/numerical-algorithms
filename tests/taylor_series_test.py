@@ -1,5 +1,5 @@
 import pytest
-from taylor_series import taylor_series
+from numerical_algorithms import taylor_series
 
 def test_main():
     result = taylor_series(2, 15)
