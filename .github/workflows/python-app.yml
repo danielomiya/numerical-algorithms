@@ -28,7 +28,7 @@ jobs:
       run: |
         # black will check if there are syntax errors
         # or code without predef formatting
-        black . --check
+        black . --check --diff
     - name: Lint with bandit
       run: |
         # bandit will check for security issues
