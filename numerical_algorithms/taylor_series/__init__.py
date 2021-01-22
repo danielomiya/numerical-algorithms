@@ -1,7 +1,9 @@
 from typing import Optional
 
 
-def taylor_series(x: int, max_iter: Optional[int] = 10) -> float:  # pylint: disable=C0103
+def taylor_series(
+    x: int, max_iter: Optional[int] = 10
+) -> float:  # pylint: disable=invalid-name
     """Calculates an approximation of e^x using an expansion of the Taylor series.
 
     Args:
@@ -15,9 +17,9 @@ def taylor_series(x: int, max_iter: Optional[int] = 10) -> float:  # pylint: dis
     fat = 1
     power = 1
 
-    for i in range(1, max_iter+1):
+    for i in range(1, max_iter + 1):
         fat *= i
         power *= x
-        result += power/fat
+        result += power / fat
 
     return result
