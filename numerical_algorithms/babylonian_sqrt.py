@@ -1,47 +1,29 @@
-from typing import List, Optional
+from typing import List
 
 
-def calc_error(avg_point: float, number: int) -> float:
-    """Calculates the error rate.
-
-    Args:
-        avg_point (float): avg point of current approximation.
-        number (int): target number (s).
-
-    Returns:
-        float: absolute error
-    """
+def _calc_error(avg_point: float, number: int) -> float:
     return avg_point ** 2 - number
 
 
-def avg(*args: List[float]) -> float:
-    """Calculates the average.
-
-    Returns:
-        float: average
-    """
+def _avg(*args: List[float]) -> float:
     return sum(args) / len(args)
 
 
 def babylonian_sqrt(
     number: float,
-    lower_lim: Optional[float] = None,
-    upper_lim: Optional[float] = None,
-    rounds: Optional[int] = 10,
+    lower_lim: float = None,
+    upper_lim: float = None,
+    rounds: int = 10,
 ) -> float:
-    """Calculates a square root using babylonian algorithm.
+    """
+    Calculates a square root using babylonian algorithm.
 
-    Args:
-        number (float): number whose square root we're calculating.
-        lower_lim (float, optional): approx lower limit. Defaults to None.
-        upper_lim (float, optional): approx upper limit. Defaults to None.
-        rounds (int, optional): max num of iterations. Defaults to 10.
-
-    Raises:
-        ArithmeticError: when number is negative.
-
-    Returns:
-        float: square root.
+    :param number: number whose square root we're calculating
+    :param lower_lim: approx lower limit, defaults to None
+    :param upper_lim: approx upper limit, defaults to None
+    :param rounds: max num of iterations, defaults to 10
+    :raises ArithmeticError: when number is negative
+    :return: square root of number
     """
     if number == 0:
         # square root of 0 is 0
@@ -59,19 +41,19 @@ def babylonian_sqrt(
 
         return babylonian_sqrt(number, i, i + 1, rounds - 1)
 
-    err = calc_error(lower_lim, number)
+    err = _calc_error(lower_lim, number)
 
     if err == 0:
         # early return for perfect squares
         return lower_lim
 
-    avg_point = avg(upper_lim, lower_lim)
+    avg_point = _avg(upper_lim, lower_lim)
 
     if rounds <= 0:
         # limit of rounds to keep approximating
         return avg_point
 
-    err = calc_error(avg_point, number)
+    err = _calc_error(avg_point, number)
 
     if err > 0:
         # if err > 0, get a smaller num between lower_lim and avg_point
