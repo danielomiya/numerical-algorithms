@@ -1,5 +1,5 @@
 import pytest
-from numerical_algorithms import babylonian_sqrt
+from numerical_algorithms.babylonian_sqrt import babylonian_sqrt
 
 
 def test_main():

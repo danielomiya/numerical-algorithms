@@ -16,7 +16,7 @@ def jacobi_method(
         roots (List[float], optional): approx of the roots. Defaults to None.
 
     Raises:
-        ArithmeticError: thrown when unable to find an approximation with the defined constraints
+        ArithmeticError: when unable to find a result with the defined constraints
 
     Returns:
         List[float]: approximation the unknowns

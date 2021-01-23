@@ -1,5 +1,5 @@
 import pytest
-from numerical_algorithms import jacobi_method
+from numerical_algorithms.jacobi_method import jacobi_method
 
 
 @pytest.mark.parametrize(

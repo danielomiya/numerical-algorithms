@@ -1,7 +1,7 @@
 from typing import Callable, Optional
 
 
-def bisection(
+def bisection_method(
     point_a: float,
     point_b: float,
     function: Callable[[float], float],
