@@ -7,19 +7,15 @@ def jacobi_method(
     tolerance: float = 1e-10,
     roots: List[float] = None,
 ) -> List[float]:
-    """Given a system of equations, returns an approximation of the unknowns.
+    """
+    Given a system of equations, returns an approximation of the unknowns
 
-    Args:
-        matrix (List[List[float]]): system of equations
-        max_iter (int, optional): maximum number of iterations. Defaults to 100.
-        tolerance (float, optional): acceptable tolerance for the approx. Defaults to 1e-10.
-        roots (List[float], optional): approx of the roots. Defaults to None.
-
-    Raises:
-        ArithmeticError: when unable to find a result with the defined constraints
-
-    Returns:
-        List[float]: approximation the unknowns
+    :param matrix: system of equations
+    :param max_iter: maximum number of iterations, defaults to 100
+    :param tolerance: acceptable tolerance for the approx, defaults to 1e-10
+    :param roots: approx of the roots, defaults to None
+    :raises ArithmeticError: when unable to find a result with the defined constraints
+    :return: approximation the unknowns
     """
     number_equations = len(matrix)
 

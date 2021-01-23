@@ -1,12 +1,9 @@
-from typing import Optional
-
-
-def taylor_series(x: int, max_iter: Optional[int] = 10) -> float:
-    """Calculates an approximation of e^x using an expansion of the Taylor series.
+def taylor_series(x: int, max_iter: int = 100) -> float:
+    """Calculates an approximation of e :superscript:`x` using an expansion of the Taylor series.
 
     :param x: exponent of e
-    :param max_iter: max num of iterations, defaults to 10
-    :return: e^x
+    :param max_iter: max num of iterations, defaults to 100
+    :return: e :superscript:`x`
     """
     result = 1
     fat = 1

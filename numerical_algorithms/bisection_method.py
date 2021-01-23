@@ -1,24 +1,23 @@
-from typing import Callable, Optional
+from typing import Callable
 
 
 def bisection_method(
     point_a: float,
     point_b: float,
     function: Callable[[float], float],
-    tolerance: Optional[float] = 1e-10,
-    max_iter: Optional[int] = 100,
+    tolerance: float = 1e-10,
+    max_iter: int = 100,
 ) -> float:
-    """[summary]
+    """
+    Calculates the root of a continuous function using bisection method
 
-    Args:
-        point_a (float): [description]
-        point_b (float): [description]
-        function (Callable[[float], float]): [description]
-        tolerance (Optional[float], optional): [description]. Defaults to 1e-10.
-        max_iter (Optional[int], optional): [description]. Defaults to 100.
-
-    Returns:
-        float: [description]
+    :param point_a: point A of bisection
+    :param point_b: point B of bisection
+    :param function: function whose root we're looking for
+    :param tolerance: acceptable tolerance for the approx, defaults to 1e-10
+    :param max_iter: maximum number of iterations, defaults to 100
+    :raises ArithmeticError: when unable to solve with given constraints
+    :return: root of function
     """
     i = 0
     fa = function(point_a)

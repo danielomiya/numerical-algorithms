@@ -10,17 +10,12 @@ def _validate_system_of_equations(matrix: List[List[float]]) -> None:
 
 
 def gaussian_elimination(matrix: List[List[float]]) -> List[float]:
-    """Given an system of equations,
-    calculates the unknowns using Gaussian method
+    """
+    Given an system of equations, calculates the unknowns using Gaussian method
 
-    Args:
-        matrix (List[List[float]]): system of equations
-
-    Raises:
-        ArithmeticError: thrown when the input is not valid
-
-    Returns:
-        List[float]: values of the unknowns
+    :param matrix: system of equations
+    :raises ArithmeticError: when the input is not valid
+    :return: values of the unknowns
     """
     _validate_system_of_equations(matrix)
 
