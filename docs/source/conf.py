@@ -12,6 +12,7 @@
 #
 import os
 import sys
+from datetime import datetime
 
 sys.path.insert(0, os.path.abspath(os.path.join("..", "..", "numerical_algorithms")))
 
@@ -19,7 +20,7 @@ sys.path.insert(0, os.path.abspath(os.path.join("..", "..", "numerical_algorithm
 # -- Project information -----------------------------------------------------
 
 project = "numerical_algorithms"
-copyright = "2021, Daniel Omiya"
+copyright = datetime.now().strftime("%Y")
 author = "Daniel Omiya"
 
 # The full version, including alpha/beta/rc tags
