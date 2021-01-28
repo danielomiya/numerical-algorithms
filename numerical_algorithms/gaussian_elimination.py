@@ -5,8 +5,10 @@ def _validate_system_of_equations(matrix: List[List[float]]) -> None:
     equations_len = len(matrix)
     line_len = equations_len + 1
 
-    if not (equations_len >= 1 and all(len(s) == line_len for s in matrix)):
-        raise ArithmeticError("malformed system of equations")
+    if equations_len >= 1 and all(len(s) == line_len for s in matrix):
+        return
+
+    raise ArithmeticError("malformed system of equations")
 
 
 def gaussian_elimination(matrix: List[List[float]]) -> List[float]:
