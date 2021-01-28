@@ -1,5 +1,4 @@
 exclude_dirs:
-  - /.venv
   - /venv
 
 # (optional) list included test IDs here, eg '[B101, B406]':
