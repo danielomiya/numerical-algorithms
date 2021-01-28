@@ -5,41 +5,40 @@ name: Python application
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up Python 3.8
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.8
-    - name: Install dependencies
-      run: |
-        python -m pip install -U pip
-        pip install -r requirements.txt
-    - name: Lint with flake8
-      run: |
-        # stop the build if there are Python syntax errors or undefined names
-        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-        # now check for complexity, but doesn't stop build
-        flake8 . --count --exit-zero --max-complexity=10 --statistics
-    - name: Lint with bandit
-      run: |
-        # bandit will check for security issues
-        bandit -c .bandit -r .
-    - name: Check code style
-      run: |
-        # black will check if the code is formatted properly
-        black . --check --diff
-    - name: Test with pytest
-      run: |
-        # prepend with `python -m` so cwd is added to sys.path
-        # and our modules are made available to the tests
-        python -m pytest
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - name: Install dependencies
+        run: |
+          python -m pip install -U pip
+          pip install -r requirements.txt
+      - name: Lint with flake8
+        run: |
+          # stop the build if there are Python syntax errors or undefined names
+          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+          # now check for complexity, but doesn't stop build
+          flake8 . --count --exit-zero --max-complexity=10 --statistics
+      - name: Lint with bandit
+        run: |
+          # bandit will check for security issues
+          bandit -c .bandit -r .
+      - name: Check code style
+        run: |
+          # black will check if the code is formatted properly
+          black . --check --diff
+      - name: Run tests with pytest
+        run: |
+          # prepend with `python -m` so cwd is added to sys.path
+          # and our modules are made available to the tests
+          python -m pytest
