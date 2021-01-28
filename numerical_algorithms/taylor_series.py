@@ -1,6 +1,7 @@
 def taylor_series(x: int, max_iter: int = 100) -> float:
     """
-    Calculates an approximation of e :superscript:`x` using an expansion of the Taylor series.
+    Calculates an approximation of e :superscript:`x`
+    using an expansion of the Taylor series.
 
     :param x: exponent of e
     :param max_iter: max num of iterations, defaults to 100
